@@ -2,7 +2,7 @@ package com.in28minutes.springboot.service;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.model.Student;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Service
 public class StudentService
 {
 
    private static List<Student> students = new ArrayList<>();
+   private final SecureRandom random = new SecureRandom();
 
    static
    {
@@ -50,7 +51,7 @@ public class StudentService
       return students;
    }
 
-   public Student retrieveStudent(String studentId)
+   private Student retrieveStudent(String studentId)
    {
       for (Student student : students)
       {
@@ -93,8 +94,6 @@ public class StudentService
 
       return null;
    }
-
-   private SecureRandom random = new SecureRandom();
 
    public Course addCourse(String studentId, Course course)
    {
