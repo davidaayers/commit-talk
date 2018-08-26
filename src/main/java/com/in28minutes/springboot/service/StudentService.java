@@ -1,102 +1,108 @@
 package com.in28minutes.springboot.service;
 
+import com.in28minutes.springboot.model.Course;
+import com.in28minutes.springboot.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+@Service
+public class StudentService
+{
 
-import com.in28minutes.springboot.model.Course;
-import com.in28minutes.springboot.model.Student;
+   private final List<Student> students = new ArrayList<>();
+   private final CourseService courseService;
+   private final SecureRandom random = new SecureRandom();
 
-@Component
-public class StudentService {
+   @Autowired
+   public StudentService(CourseService courseService)
+   {
+      this.courseService = courseService;
+   }
 
-	private static List<Student> students = new ArrayList<>();
+   @PostConstruct
+   public void setup()
+   {
+      List<Course> courses = courseService.retrieveAllCourses();
 
-	static {
-		//Initialize Data
-		Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
-				.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course2 = new Course("Course2", "Spring MVC", "10 Examples",
-				Arrays.asList("Learn Maven", "Import Project", "First Example",
-						"Second Example"));
-		Course course3 = new Course("Course3", "Spring Boot", "6K Students",
-				Arrays.asList("Learn Maven", "Learn Spring",
-						"Learn Spring MVC", "First Example", "Second Example"));
-		Course course4 = new Course("Course4", "Maven",
-				"Most popular maven course on internet!", Arrays.asList(
-						"Pom.xml", "Build Life Cycle", "Parent POM",
-						"Importing into Eclipse"));
+      Student ranga = new Student("Student1", "Ranga Karanam",
+            "Hiker, Programmer and Architect", courses);
 
-		Student ranga = new Student("Student1", "Ranga Karanam",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+      Student satish = new Student("Student2", "Satish T",
+            "Hiker, Programmer and Architect", courses);
 
-		Student satish = new Student("Student2", "Satish T",
-				"Hiker, Programmer and Architect", new ArrayList<>(Arrays
-						.asList(course1, course2, course3, course4)));
+      students.add(ranga);
+      students.add(satish);
+   }
 
-		students.add(ranga);
-		students.add(satish);
-	}
+   public List<Student> retrieveAllStudents()
+   {
+      return students;
+   }
 
-	public List<Student> retrieveAllStudents() {
-		return students;
-	}
+   private Student retrieveStudent(String studentId)
+   {
+      for (Student student : students)
+      {
+         if (student.getId().equals(studentId))
+         {
+            return student;
+         }
+      }
+      return null;
+   }
 
-	public Student retrieveStudent(String studentId) {
-		for (Student student : students) {
-			if (student.getId().equals(studentId)) {
-				return student;
-			}
-		}
-		return null;
-	}
+   public List<Course> retrieveCoursesForStudent(String studentId)
+   {
+      Student student = retrieveStudent(studentId);
 
-	public List<Course> retrieveCourses(String studentId) {
-		Student student = retrieveStudent(studentId);
+      if (student == null)
+      {
+         return null;
+      }
 
-		if (student == null) {
-			return null;
-		}
+      return student.getCourses();
+   }
 
-		return student.getCourses();
-	}
+   public Course retrieveCourseForStudent(String studentId, String courseId)
+   {
+      Student student = retrieveStudent(studentId);
 
-	public Course retrieveCourse(String studentId, String courseId) {
-		Student student = retrieveStudent(studentId);
+      if (student == null)
+      {
+         return null;
+      }
 
-		if (student == null) {
-			return null;
-		}
+      for (Course course : student.getCourses())
+      {
+         if (course.getId().equals(courseId))
+         {
+            return course;
+         }
+      }
 
-		for (Course course : student.getCourses()) {
-			if (course.getId().equals(courseId)) {
-				return course;
-			}
-		}
+      return null;
+   }
 
-		return null;
-	}
+   public Course enrollStudentInCourse(String studentId, Course course)
+   {
+      Student student = retrieveStudent(studentId);
 
-	private SecureRandom random = new SecureRandom();
+      if (student == null)
+      {
+         return null;
+      }
 
-	public Course addCourse(String studentId, Course course) {
-		Student student = retrieveStudent(studentId);
+      String randomId = new BigInteger(130, random).toString(32);
+      course.setId(randomId);
 
-		if (student == null) {
-			return null;
-		}
+      student.getCourses().add(course);
 
-		String randomId = new BigInteger(130, random).toString(32);
-		course.setId(randomId);
-
-		student.getCourses().add(course);
-
-		return course;
-	}
+      return course;
+   }
 }
