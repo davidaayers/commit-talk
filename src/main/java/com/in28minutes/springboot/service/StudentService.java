@@ -4,6 +4,7 @@ import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.model.Student;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -14,11 +15,11 @@ import java.util.List;
 public class StudentService
 {
 
-   private static List<Student> students = new ArrayList<>();
+   private final List<Student> students = new ArrayList<>();
    private final SecureRandom random = new SecureRandom();
 
-   static
-   {
+   @PostConstruct
+   public void setup() {
       //Initialize Data
       Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
             .asList("Learn Maven", "Import Project", "First Example",
