@@ -17,9 +17,13 @@ import java.util.List;
 @RestController
 public class StudentController
 {
+   private final StudentService studentService;
 
    @Autowired
-   private StudentService studentService;
+   public StudentController(StudentService studentService)
+   {
+      this.studentService = studentService;
+   }
 
    @GetMapping("/students/{studentId}/courses")
    public List<Course> retrieveCoursesForStudent(@PathVariable String studentId)
