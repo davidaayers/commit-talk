@@ -1,6 +1,8 @@
 package com.in28minutes.springboot.controller;
 
 import com.in28minutes.springboot.model.Course;
+import com.in28minutes.springboot.model.Student;
+import com.in28minutes.springboot.service.CourseService;
 import com.in28minutes.springboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +19,28 @@ import java.util.List;
 @RestController
 public class StudentController
 {
+
    private final StudentService studentService;
+   private final CourseService courseService;
 
    @Autowired
-   public StudentController(StudentService studentService)
+   public StudentController(StudentService studentService, CourseService courseService)
    {
       this.studentService = studentService;
+      this.courseService = courseService;
+   }
+
+   @GetMapping("/courses")
+   public List<Course> retrieveAllCourses()
+   {
+      return courseService.retrieveAllCourses();
+   }
+
+
+   @GetMapping("/students")
+   public List<Student> retrieveAllStudents()
+   {
+      return studentService.retrieveAllStudents();
    }
 
    @GetMapping("/students/{studentId}/courses")
