@@ -28,14 +28,14 @@ public class StudentController
    @GetMapping("/students/{studentId}/courses")
    public List<Course> retrieveCoursesForStudent(@PathVariable String studentId)
    {
-      return studentService.retrieveCourses(studentId);
+      return studentService.retrieveCoursesForStudent(studentId);
    }
 
    @GetMapping("/students/{studentId}/courses/{courseId}")
    public Course retrieveDetailsForCourse(@PathVariable String studentId,
                                           @PathVariable String courseId)
    {
-      return studentService.retrieveCourse(studentId, courseId);
+      return studentService.retrieveCourseForStudent(studentId, courseId);
    }
 
    @PostMapping("/students/{studentId}/courses")
@@ -43,7 +43,7 @@ public class StudentController
          @PathVariable String studentId, @RequestBody Course newCourse)
    {
 
-      Course course = studentService.addCourse(studentId, newCourse);
+      Course course = studentService.enrollStudentInCourse(studentId, newCourse);
 
       if (course == null)
       {

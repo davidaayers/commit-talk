@@ -45,7 +45,7 @@ public class StudentControllerTest
    public void retrieveDetailsForCourse() throws Exception
    {
 
-      when(studentService.retrieveCourse(Mockito.anyString(), Mockito.anyString())).thenReturn(mockCourse);
+      when(studentService.retrieveCourseForStudent(Mockito.anyString(), Mockito.anyString())).thenReturn(mockCourse);
 
       RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
             "/students/Student1/courses/Course1").accept(
@@ -66,8 +66,8 @@ public class StudentControllerTest
       Course mockCourse = new Course("1", "Smallest Number", "1",
             Arrays.asList("1", "2", "3", "4"));
 
-      // studentService.addCourse to respond back with mockCourse
-      when(studentService.addCourse(Mockito.anyString(), Mockito.any(Course.class))).thenReturn(mockCourse);
+      // studentService.enrollStudentInCourse to respond back with mockCourse
+      when(studentService.enrollStudentInCourse(Mockito.anyString(), Mockito.any(Course.class))).thenReturn(mockCourse);
 
       // Send course as body to /students/Student1/courses
       RequestBuilder requestBuilder = MockMvcRequestBuilders

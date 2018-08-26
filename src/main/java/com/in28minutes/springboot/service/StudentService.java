@@ -57,7 +57,7 @@ public class StudentService
       return null;
    }
 
-   public List<Course> retrieveCourses(String studentId)
+   public List<Course> retrieveCoursesForStudent(String studentId)
    {
       Student student = retrieveStudent(studentId);
 
@@ -69,7 +69,7 @@ public class StudentService
       return student.getCourses();
    }
 
-   public Course retrieveCourse(String studentId, String courseId)
+   public Course retrieveCourseForStudent(String studentId, String courseId)
    {
       Student student = retrieveStudent(studentId);
 
@@ -89,7 +89,7 @@ public class StudentService
       return null;
    }
 
-   public Course addCourse(String studentId, Course course)
+   public Course enrollStudentInCourse(String studentId, Course course)
    {
       Student student = retrieveStudent(studentId);
 
