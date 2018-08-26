@@ -7,6 +7,8 @@ This talk is in the [Ignite talk](http://www.ignitetalks.io/) format, designed t
 
 This repo was used to construct the examples shown in the slides, and also contains the powerpoint used in the talk.
 
+The code in the repo was originally from: https://github.com/in28minutes/spring-boot-examples
+
 PHOTO CREDIT
 ------------
 
