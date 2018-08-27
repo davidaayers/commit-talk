@@ -1,6 +1,9 @@
 GET COMMIT-TED!
 ---------------
 
+Presented by: David Ayers, Principal Architect at [Credera](http://www.credera.com)
+[@iamagiantnerd](https://twitter.com/iamagiantnerd), david.ayers@credera.com
+
 A talk about writing good commit messages, and why it's important.
 
 This talk is in the [Ignite talk](http://www.ignitetalks.io/) format, designed to be presented in 5 minutes.
@@ -8,6 +11,21 @@ This talk is in the [Ignite talk](http://www.ignitetalks.io/) format, designed t
 This repo was used to construct the examples shown in the slides, and also contains the powerpoint used in the talk.
 
 The code in the repo was originally from: https://github.com/in28minutes/spring-boot-examples
+
+TALK ABSTRACT
+-------------
+Commit messages are one of two things: love letters to your future self, or hate mail. The choice is up to you. In this ignite talk, we’ll quickly go through the anatomy of good commit messages, why they are important, and how to craft them yourself.
+
+TALK DESCRIPTION
+----------------
+Most of us use some sort of version control system; if you’re doing devops-y stuff, it’s likely you are using git. Using these follows a familiar pattern: You do some work, commit the work, and push it to a remote repository, perhaps creating a Pull Request or Merge Request for review.
+
+Here’s the thing – what you put into your commit messages matters. Those commit messages are either love letters to your future self, or hate mail. You’ve heard the maxim that code is written once and read many times, and the same goes for commit messages. Putting some thought into what you put into your commit messages (and making them readable) is important.
+
+In this five minute ignite talk, you’ll learn the anatomy of a good commit message and how to structure your work for maximum impact to others (and yourself!) that have to ready them. We’ll also touch briefly on some commit anti-patterns.
+
+So get commit-ted to crafting useful commit messages!
+
 
 PHOTO CREDIT
 ------------
