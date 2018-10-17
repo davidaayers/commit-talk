@@ -6,6 +6,9 @@ Presented by: David Ayers, Principal Architect at [Credera](http://www.credera.c
 
 A talk about writing good commit messages, and why it's important.
 
+This talk was presented at [DevOps Days Dallas, 2018](https://www.devopsdays.org/events/2018-dallas/welcome/). Here's the video from that event:
+https://youtu.be/S77F53H82Xs?t=605
+
 This talk is in the [Ignite talk](http://www.ignitetalks.io/) format, designed to be presented in 5 minutes.
 
 This repo was used to construct the examples shown in the slides, and also contains the powerpoint used in the talk.
