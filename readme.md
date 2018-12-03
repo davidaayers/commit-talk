@@ -4,7 +4,9 @@ GET COMMIT-TED!
 Presented by: David Ayers, Principal Architect at [Credera](http://www.credera.com)
 [@iamagiantnerd](https://twitter.com/iamagiantnerd), david.ayers@credera.com
 
-A talk about writing good commit messages, and why it's important.
+A talk about writing commit messages, and more importantly, how to write them so that 
+the history you are creating with your code is meaningful, and the code you submit 
+for code reviews is more understandable.
 
 This talk was presented at [DevOps Days Dallas, 2018](https://www.devopsdays.org/events/2018-dallas/welcome/). Here's the video from that event:
 https://youtu.be/S77F53H82Xs?t=605
