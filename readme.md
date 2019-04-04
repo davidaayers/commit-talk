@@ -1,8 +1,10 @@
 GET COMMIT-TED!
 ---------------
 
-Presented by: David Ayers, Principal Architect at [Credera](http://www.credera.com)
-[@iamagiantnerd](https://twitter.com/iamagiantnerd), david.ayers@credera.com
+Presented by: David Ayers<br>
+Innovative Technology Professional | Passionate Lifelong Learner | Giant Nerd <br>
+[Full Bio](https://github.com/davidaayers/speaker-info/blob/master/bio.md)<br>
+[@iamagiantnerd](https://twitter.com/iamagiantnerd), iamagiantnerd@gmail.com
 
 A talk about writing commit messages, and more importantly, how to write them so that 
 the history you are creating with your code is meaningful, and the code you submit 
