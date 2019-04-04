@@ -1,4 +1,4 @@
-GET COMMIT-TED!
+Get Commit-ted!
 ---------------
 
 Presented by: David Ayers<br>
@@ -19,11 +19,11 @@ This repo was used to construct the examples shown in the slides, and also conta
 
 The code in the repo was originally from: https://github.com/in28minutes/spring-boot-examples
 
-TALK ABSTRACT
+Talk Abstract
 -------------
 Commit messages are one of two things: love letters to your future self, or hate mail. The choice is up to you. In this ignite talk, we’ll quickly go through the anatomy of good commit messages, why they are important, and how to craft them yourself.
 
-TALK DESCRIPTION
+Talk Description
 ----------------
 Most of us use some sort of version control system; if you’re doing devops-y stuff, it’s likely you are using git. Using these follows a familiar pattern: You do some work, commit the work, and push it to a remote repository, perhaps creating a Pull Request or Merge Request for review.
 
@@ -34,7 +34,7 @@ In this five minute ignite talk, you’ll learn the anatomy of a good commit mes
 So get commit-ted to crafting useful commit messages!
 
 
-PHOTO CREDIT
+Photo Credit
 ------------
 
 All photos used in the presentation are CC0, provided by [Unsplash](http://unsplash.com).
